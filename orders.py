@@ -133,13 +133,13 @@ def cre_ordine():
     # Record NAB - Informazioni sul mittente dell'ordine
         # Valori Fissi
         TIPOREC = 'NAB'  # Tipo record
-        CODBUYER = '00798870879'   # P.IVA o GLN Mittente
+        CODBUYER = '0000000)'   # P.IVA o GLN Mittente
         QCODBUY = 'VA'
-        RAGSOCB = 'PAPINO ELETTRODOMESTICI S.P.A.' # Rag. soc. Mittente
-        INDIRB = 'VIALE ASTREL,1 C.DA PALAZZOLO'
-        CITTAB = 'BELPASSO'
+        RAGSOCB = 'aaaaaaaaaaaa S.P.A.' # Rag. soc. Mittente
+        INDIRB = 'via bbbbbb'
+        CITTAB = 'citta'
         PROVB = 'CT'
-        CAPB = '95032'
+        CAPB = '95000'
         NAZIOB = 'IT'
 
         print '\n%s mittente: %s - %s\n' % (TIPOREC,CODBUYER,RAGSOCB)
@@ -166,7 +166,7 @@ def cre_ordine():
         for row in res.fetchall():
             COD=row.COD         # N. GLN PDV
             INDIRD=row.INDIRI   # Indirizzo punto di consegna
-            CITTAD=row.CITTA    # Citt‡
+            CITTAD=row.CITTA    # Citt√†
             PROVD=row.PROVIN    # Provincia
 
         con.close() # Chiusura DB
@@ -230,9 +230,9 @@ def cre_ordine():
         TIPOREC = 'LIN'     # Tipo record
         NUMRIGA = 0         # Parte da 1
         TIPOCODCU = 'EN'    # Barcode fisso
-        UDMQORD = 'PCE'     # Unit‡ misura PCE = pezzi
+        UDMQORD = 'PCE'     # Unit√† misura PCE = pezzi
         TIPOPRZ = 'AAA'     # Tipo prezzo AAA = netto
-        UDMPRZUN = 'PCE'    # Unit‡ misura prezzo PCE = pezzi
+        UDMPRZUN = 'PCE'    # Unit√† misura prezzo PCE = pezzi
         
         # Connessione al DB
         con = pyodbc.connect(driver="{SQL Server}",server='SVFSV001',database='DBProjectSyncBI',uid='sa',pwd='xxxxxxx')
